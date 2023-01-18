@@ -1,0 +1,24 @@
+.team-img {
+  background-image: url("../../../assets/Team.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 85vh;
+  position: relative;
+}
+
+.team-content {
+  position: absolute;
+  bottom: 5%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+}
+
+.team-info h4 {
+  text-transform: uppercase;
+}
+
+.team-info p {
+  padding-top: 10px;
+}
