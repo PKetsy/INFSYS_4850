@@ -38,7 +38,8 @@ button {
   font-weight: 600;
   color: var(--color-white);
   background-color: var(--color-primary);
-  border: none;
+  border: 1px solid white;
+  border-radius: 5px;
   cursor: pointer;
 }
 

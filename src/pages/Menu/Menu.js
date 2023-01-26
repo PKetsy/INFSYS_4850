@@ -5,7 +5,9 @@ import OurMostPopular from "./OurMostPopular/OurMostPopular";
 import Fruits from "./Fruits/Fruits";
 import Vegetables from "./Vegetables/Vegetables";
 import Seafood from "./Seafood/Seafood";
-import Other from "./Other/Other";
+import Kenricks from "./Kenricks/Kenricks";
+import Misc from "./Misc/Misc";
+import Beverages from "./Beverages/Beverages";
 
 const Menu = () => {
   return (
@@ -19,7 +21,9 @@ const Menu = () => {
       <Fruits />
       <Vegetables />
       <Seafood />
-      <Other />
+      <Kenricks />
+      <Misc />
+      <Beverages />
     </div>
   );
 };

@@ -1,0 +1,10 @@
+.container_misc-selection h1 {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.container_misc-selection img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
