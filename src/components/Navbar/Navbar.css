@@ -34,8 +34,9 @@
   transition: all 0.2s ease;
 }
 
-.nav-menu .nav-link:hover {
-  color: var(--color-primary);
+.nav-menu .nav-link:hover,
+.active {
+  color: var(--color-primary) !important;
 }
 
 .hamburger {
