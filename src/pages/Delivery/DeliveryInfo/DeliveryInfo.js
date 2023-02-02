@@ -1,11 +1,17 @@
-import React from "react";
-import { BsFillStarFill } from "react-icons/bs";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { BsFillStarFill } from 'react-icons/bs';
 
-import "./DeliveryInfo.css";
-import DeliveryRadius1 from "../../../assets/DeliveryRadius1.jpg";
-import DeliveryRadius2 from "../../../assets/DeliveryRadius2.jpg";
+import './DeliveryInfo.css';
+import DeliveryRadius1 from '../../../assets/DeliveryRadius1.jpg';
+import DeliveryRadius2 from '../../../assets/DeliveryRadius2.jpg';
 
 const DeliveryInfo = () => {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = '/onlineorder';
+    navigate(path);
+  };
   return (
     <div className="section-delivery-info">
       <div className="container">
@@ -67,7 +73,9 @@ const DeliveryInfo = () => {
               <li>Shrimp</li>
               <li>Seasonings / Accessories </li>
             </ul>
-            <button className="orderButton">Order now</button>
+            <button className="orderButton" onClick={routeChange}>
+              Order now
+            </button>
           </div>
         </div>
       </div>
