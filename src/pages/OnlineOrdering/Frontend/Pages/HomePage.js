@@ -1,25 +1,27 @@
+import { BrowserRouter, Link } from 'react-router-dom';
 import data from '../data';
 
 const HomePage = () => {
   return (
+    // <BrowserRouter>
     <div className="online-container">
       <header>
-        <a href="/onlineorder">
+        <Link to="/onlineorder">
           <h3>The Fruit Stand & Seafood</h3>
-        </a>
+        </Link>
       </header>
       <main>
         <h1>Featured Products</h1>
         <div className="products">
           {data.products.map((product) => (
             <div className="product" key={product.slug}>
-              <a href={`/product/${product.slug}`}>
+              <Link to={`/product/${product.slug}`}>
                 <img src={product.image} alt={product.name} />
-              </a>
+              </Link>
               <div className="product-info">
-                <a href={`/product/${product.slug}`}>
+                <Link to={`/product/${product.slug}`}>
                   <p>{product.name}</p>
-                </a>
+                </Link>
 
                 <p>
                   <strong>${product.price}</strong>
@@ -31,6 +33,7 @@ const HomePage = () => {
         </div>
       </main>
     </div>
+    // </BrowserRouter>
   );
 };
 

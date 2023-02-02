@@ -9,6 +9,7 @@ import Contact from './pages/Contact/Contact';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/OnlineOrdering/Frontend/Pages/HomePage';
+import ProductPage from './pages/OnlineOrdering/Frontend/Pages/ProductPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/onlineorder" element={<HomePage />} />
+        <Route path="/product/:slug" element={<ProductPage />} />
       </Routes>
       <Footer />
     </div>
