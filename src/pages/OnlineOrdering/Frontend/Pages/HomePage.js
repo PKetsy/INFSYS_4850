@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useReducer } from 'react';
 import { BrowserRouter, Link } from 'react-router-dom';
 import axios from 'axios';
-import { useReducer } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Navbar from 'react-bootstrap/Navbar';
+
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
 import Product from '../../../../components/OnlineProducts/Product';
@@ -48,35 +48,27 @@ const HomePage = () => {
   return (
     // <BrowserRouter>
     <div className="online-container">
-      <header>
-        <Navbar bg="dark" variant="dark">
-          <Container>
-            <LinkContainer to="/onlineorder">
-              <Navbar.Brand>The Fruit Stand & Seafood</Navbar.Brand>
-            </LinkContainer>
-          </Container>
-        </Navbar>
-      </header>
-      <main>
-        <Container>
-          <h1>Featured Products</h1>
-          <div className="products">
-            {loading ? (
-              <div>Loading...</div>
-            ) : error ? (
-              <div>{error}</div>
-            ) : (
-              <Row>
-                {products.map((product) => (
-                  <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-                    <Product product={product}></Product>
-                  </Col>
-                ))}
-              </Row>
-            )}
-          </div>
-        </Container>
-      </main>
+      <Container className="mt-3">
+        <Helmet>
+          <title>Fruit Stand & Seafood</title>
+        </Helmet>
+        <h1>Featured Products</h1>
+        <div className="products">
+          {loading ? (
+            <div>Loading...</div>
+          ) : error ? (
+            <div>{error}</div>
+          ) : (
+            <Row>
+              {products.map((product) => (
+                <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
+                  <Product product={product}></Product>
+                </Col>
+              ))}
+            </Row>
+          )}
+        </div>
+      </Container>
     </div>
     // </BrowserRouter>
   );
