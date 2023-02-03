@@ -199,3 +199,11 @@ main {
   background-color: #c3512f;
   color: white;
 }
+
+/* CSS below for productPage.js */
+
+.img-large {
+  max-width: 100%;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+}
