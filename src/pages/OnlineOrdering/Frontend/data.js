@@ -2,7 +2,7 @@ const data = {
   products: [
     {
       name: 'Royal Red Shrimp',
-      slug: 'shellfish',
+      slug: 'shrimp',
       category: 'Seafood',
       image: '/images/RoyalRed.jpg', //try 679 x 829 images
       price: 13.99,
