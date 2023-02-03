@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useReducer } from 'react';
-// import data from '../data';
+
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -43,37 +46,43 @@ const HomePage = () => {
     // <BrowserRouter>
     <div className="online-container">
       <header>
-        <Link to="/onlineorder">
-          <h3>The Fruit Stand & Seafood</h3>
-        </Link>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <LinkContainer to="/onlineorder">
+              <Navbar.Brand>The Fruit Stand & Seafood</Navbar.Brand>
+            </LinkContainer>
+          </Container>
+        </Navbar>
       </header>
       <main>
-        <h1>Featured Products</h1>
-        <div className="products">
-          {loading ? (
-            <div>Loading...</div>
-          ) : error ? (
-            <div>{error}</div>
-          ) : (
-            products.map((product) => (
-              <div className="product" key={product.slug}>
-                <Link to={`/product/${product.slug}`}>
-                  <img src={product.image} alt={product.name} />
-                </Link>
-                <div className="product-info">
+        <Container>
+          <h1>Featured Products</h1>
+          <div className="products">
+            {loading ? (
+              <div>Loading...</div>
+            ) : error ? (
+              <div>{error}</div>
+            ) : (
+              products.map((product) => (
+                <div className="product" key={product.slug}>
                   <Link to={`/product/${product.slug}`}>
-                    <p>{product.name}</p>
+                    <img src={product.image} alt={product.name} />
                   </Link>
+                  <div className="product-info">
+                    <Link to={`/product/${product.slug}`}>
+                      <p>{product.name}</p>
+                    </Link>
 
-                  <p>
-                    <strong>${product.price}</strong>
-                  </p>
-                  <button>Add to Cart</button>
+                    <p>
+                      <strong>${product.price}</strong>
+                    </p>
+                    <button>Add to Cart</button>
+                  </div>
                 </div>
-              </div>
-            ))
-          )}
-        </div>
+              ))
+            )}
+          </div>
+        </Container>
       </main>
     </div>
     // </BrowserRouter>
