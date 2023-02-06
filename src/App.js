@@ -21,8 +21,6 @@ function App() {
         <Route path="/delivery" element={<Delivery />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/onlineorder" element={<HomePage />} />
-        <Route path="/product/:slug" element={<ProductPage />} />
       </Routes>
       <Footer />
     </div>
