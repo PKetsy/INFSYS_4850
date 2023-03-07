@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
-import MenuImage from "../../components/MenuImage/MenuImage";
-import bgImage from "../../assets/MenuBg.jpg";
-import DeliveryInfo from "./DeliveryInfo/DeliveryInfo";
+import MenuImage from '../../components/MenuImage/MenuImage';
+import bgImage from '../../assets/MenuBg.jpg';
+import DeliveryInfo from './DeliveryInfo/DeliveryInfo';
 
 const Delivery = () => {
   return (
     <div>
-      {" "}
+      {' '}
       <MenuImage
         bgImage={bgImage}
-        heading={["We", <span> DELIVER</span>]}
-        text="Service is available Mon - Fri, 7am - 5pm."
+        heading={['We', <span> DELIVER</span>]}
+        text="Call us to place your order!"
       />
       <DeliveryInfo />
     </div>

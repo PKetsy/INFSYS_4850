@@ -73,9 +73,6 @@ const DeliveryInfo = () => {
               <li>Shrimp</li>
               <li>Seasonings / Accessories </li>
             </ul>
-            <button className="orderButton" onClick={routeChange}>
-              Order now
-            </button>
           </div>
         </div>
       </div>

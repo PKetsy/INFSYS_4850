@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
-import { FaBars, FaTimes } from "react-icons/fa";
-import logo from "../../assets/logo.png";
+import { FaBars, FaTimes } from 'react-icons/fa';
+import logo from '../../assets/logo.png';
 
-import "./Navbar.css";
+import './Navbar.css';
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -18,21 +18,21 @@ const Navbar = () => {
     }
   };
 
-  window.addEventListener("scroll", changeColor);
+  window.addEventListener('scroll', changeColor);
 
   const handleClick = () => {
     setClick(!click);
   };
 
   return (
-    <div className={color ? "header header-bg" : "header"}>
+    <div className={color ? 'header header-bg' : 'header'}>
       <div className="container">
         <div className="nav-bar">
           <Link to="/">
             <img src={logo} alt="logo" width={85} />
           </Link>
 
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li onClick={handleClick}>
               <NavLink className="nav-link" to="/">
                 Home
@@ -49,6 +49,11 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li onClick={handleClick}>
+              <NavLink className="nav-link" to="/events">
+                Events
+              </NavLink>
+            </li>
+            <li onClick={handleClick}>
               <NavLink className="nav-link" to="/about">
                 About
               </NavLink>
@@ -58,17 +63,13 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
-
-            <li onClick={handleClick}>
-              <button>Order now</button>
-            </li>
           </ul>
 
           <div className="hamburger" onClick={handleClick}>
             {click ? (
-              <FaTimes size={20} style={{ color: "#fff" }} />
+              <FaTimes size={20} style={{ color: '#fff' }} />
             ) : (
-              <FaBars size={20} style={{ color: "#fff" }} />
+              <FaBars size={20} style={{ color: '#fff' }} />
             )}
           </div>
         </div>

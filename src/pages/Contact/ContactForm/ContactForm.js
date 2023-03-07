@@ -1,15 +1,54 @@
-import React from "react";
-import "./ContactForm.css";
-
-import ContactImage from "../../../assets/ContactForm.jpg";
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import './ContactForm.css';
 
 const ContactForm = () => {
+  const form = useRef();
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const emailValidation = () => {
+    const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
+    if (regEx.test(email)) {
+      setMessage('Email valid : Message was sent.');
+    } else if (!regEx.test(email) && email !== '') {
+      setMessage('Email is not Valid');
+    } else {
+      setMessage('');
+    }
+  };
+
+  const handleOnChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_uxv4t86',
+        'template_z0yyira',
+        form.current,
+        'bV7leNf-sQ9Pk6pPE'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log('Message Sent');
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <div className="section">
       <div className="container grid-container contact-content">
         <div>
           <h1 className="heading-secondary">
-            Get in <span>touch</span>
+            Questions? <span>Call or email!</span>
           </h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus,
@@ -17,8 +56,6 @@ const ContactForm = () => {
             repudiandae rerum quaerat at impedit quo eius odit quasi accusamus
             officia eligendi consequuntur.
           </p>
-
-          <img src={ContactImage} alt="get in touch" />
 
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, non
@@ -36,40 +73,30 @@ const ContactForm = () => {
           <br />
         </div>
 
-        <div>
-          <h1 className="heading-secondary">
-            Message us<span> Anytime</span>
-          </h1>
-          <p>*We will reply back as soon as we can!</p>
-          <form>
-            <div className="form-field name-email">
-              <div>
-                <label>Name</label>
-                <input type="text" name="name" />
-              </div>
-
-              <div>
-                <label>Email</label>
-                <input type="email" name="email" />
-              </div>
-            </div>
-
-            <div className="form-field">
-              <div>
-                <label>Subject</label>
-                <input type="text" name="subject" />
-              </div>
-            </div>
-
-            <div className="form-field">
-              <div>
-                <label>Message</label>
-                <textarea type="text" name="message" />
-              </div>
-            </div>
+        <div className="contact-container">
+          <h2>Send us an Email!</h2>
+          <form ref={form} onSubmit={sendEmail}>
+            <label htmlFor="name" className="label">
+              Name
+            </label>
+            <input type="text" name="user_name" placeholder="Name" />
+            <label htmlFor="email" className="label">
+              Email
+            </label>
+            <input
+              id="email"
+              className="input"
+              type="email"
+              name="user_email"
+              placeholder="email"
+              value={email}
+              onChange={handleOnChange}
+            />
+            <label>Message</label>
+            <textarea name="message" />
+            <input type="submit" value="Send" onClick={emailValidation} />
           </form>
-
-          <button className="contact-button">Submit</button>
+          <p className="message">{message}</p>
         </div>
       </div>
     </div>
