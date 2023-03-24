@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from '../../../components/UIElements/Card';
 import Button from '../../../components/Buttons/FormButton';
 import './EventItem.css';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const RsvpDetails = (props) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const classes = useStyles();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -68,7 +68,7 @@ const RsvpDetails = (props) => {
           <div className="event-item__actions">
             <Button
               onClick={() => {
-                history.push(`/events/${props.id}`);
+                navigate.push(`/events/${props.id}`);
               }}
             >
               RSVP

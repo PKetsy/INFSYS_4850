@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Card from '../../../components/UIElements/Card';
 import Button from '../../../components/Buttons/FormButton';
 import './EventItem.css';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // import { redirect } from 'react-router-dom';
 import RsvpDetails from './RsvpDetails';
 
 const EventItem = (props) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [showForm, setShowForm] = useState(false);
 
