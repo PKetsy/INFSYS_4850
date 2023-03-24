@@ -1,30 +1,26 @@
 import React, { useState } from 'react';
-
 import Card from '../../../components/UIElements/Card';
 import Button from '../../../components/Buttons/FormButton';
-import Modal from '../../../components/UIElements/Modal';
 import './EventItem.css';
+import { useHistory } from 'react-router-dom';
+
+// import { redirect } from 'react-router-dom';
+import RsvpDetails from './RsvpDetails';
 
 const EventItem = (props) => {
-  const [showModal, setShowModal] = useState(false);
+  const history = useHistory();
 
-  const openModalHandler = () => setShowModal(true);
-  const closeModalHandler = () => setShowModal(false);
+  const [showForm, setShowForm] = useState(false);
+
+  // Assume isAdmin is a boolean indicating whether the user is an admin
+  const isAdmin = true; // Set this to the actual value based on your authentication system
+
+  const handleRsvpClick = () => {
+    setShowForm(true);
+  };
 
   return (
     <React.Fragment>
-      <Modal
-        show={showModal}
-        onCancel={closeModalHandler}
-        header={props.title}
-        contentClass="event-item__modal-content"
-        footerClass="event-item__modal-actions"
-        footer={<Button onClick={closeModalHandler}>CLOSE</Button>}
-      >
-        <div className="form-container">
-          <h2>THE FORM</h2>
-        </div>
-      </Modal>
       <li className="event-item">
         <Card className="event-item__content">
           <div className="event-item__image">
@@ -35,14 +31,24 @@ const EventItem = (props) => {
             <p>{props.description}</p>
           </div>
           <div className="event-item__actions">
-            <Button inverse onClick={openModalHandler}>
+            <Button onClick={handleRsvpClick}>RSVP</Button>
+            {/* <Button
+              onClick={() => {
+                redirect(`/events/${props.id}`);
+              }}
+            >
               RSVP
-            </Button>
-            <Button to={`/events/${props.id}`}>EDIT</Button>
-            <Button danger>DELETE</Button>
+            </Button> */}
+            {isAdmin && ( // Only render the following buttons if the user is an admin
+              <React.Fragment>
+                <Button to={`/events/${props.id}`}>EDIT</Button>
+                <Button danger>DELETE</Button>
+              </React.Fragment>
+            )}
           </div>
         </Card>
       </li>
+      {showForm && <RsvpDetails title={props.title} />}
     </React.Fragment>
   );
 };
