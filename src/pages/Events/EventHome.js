@@ -1,31 +1,32 @@
 import React from 'react';
 import MenuImage from '../../components/MenuImage/MenuImage';
+import NewEventForm from '../components/NewEventForm';
 import EventList from './components/EventList';
 
 import Eventhero from '../../assets/Eventhero.jpg';
 
-const DUMMY_EVENTS = [
-  {
-    id: 'p1',
-    title: 'Alaska Fishing Trip',
-    description: 'Wild Alaska Salmon, Halibut, Herring, Pollock',
-    imageUrl:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/336438307_1127064121295879_9137703147887123946_n.jpg?stp=cp6_dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=B-JUtzXKFn0AX8YmZ5Y&_nc_ht=scontent-ord5-1.xx&oh=00_AfCN8UYp2Xnqgf6E1CGhhSjYy97tjBadIDhoxxEqJeIWIA&oe=64179EAA',
-    creator: 'u1',
-  },
+// const DUMMY_EVENTS = [
+//   {
+//     id: 'p1',
+//     title: 'Alaska Fishing Trip',
+//     description: 'Wild Alaska Salmon, Halibut, Herring, Pollock',
+//     imageUrl:
+//       'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/336438307_1127064121295879_9137703147887123946_n.jpg?stp=cp6_dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=B-JUtzXKFn0AX8YmZ5Y&_nc_ht=scontent-ord5-1.xx&oh=00_AfCN8UYp2Xnqgf6E1CGhhSjYy97tjBadIDhoxxEqJeIWIA&oe=64179EAA',
+//     creator: 'u1',
+//   },
 
-  {
-    id: 'p2',
-    title: 'Louisiana Crawfish',
-    description:
-      'Big fat crawdads ready for a cajun boil!  Sold by the sack, or by the pound!!',
-    imageUrl:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/334596884_1367426374033668_7133794271096531278_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=U_SJl3F2kKsAX-VT1AQ&_nc_ht=scontent-ord5-2.xx&oh=00_AfDzpUdvrzzJV25KWZkqa_jQYJcMed-T8N-kKz0EXgSy-A&oe=64170C0A',
-    creator: 'u2',
-  },
-];
+//   {
+//     id: 'p2',
+//     title: 'Louisiana Crawfish',
+//     description:
+//       'Big fat crawdads ready for a cajun boil!  Sold by the sack, or by the pound!!',
+//     imageUrl:
+//       'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/334596884_1367426374033668_7133794271096531278_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=U_SJl3F2kKsAX-VT1AQ&_nc_ht=scontent-ord5-2.xx&oh=00_AfDzpUdvrzzJV25KWZkqa_jQYJcMed-T8N-kKz0EXgSy-A&oe=64170C0A',
+//     creator: 'u2',
+//   },
+// ];
 
-const NewEvent = () => {
+const EventHome = () => {
   return (
     <div className="section">
       <MenuImage
@@ -80,9 +81,12 @@ const NewEvent = () => {
           </h5>
         </div>
       </div>
-      <EventList items={DUMMY_EVENTS} />
+      <div>
+        <h2>Create New Event</h2>
+        <NewEventForm />
+      </div>
     </div>
   );
 };
 
-export default NewEvent;
+export default EventHome;
