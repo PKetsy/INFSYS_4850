@@ -1,7 +1,5 @@
 import React from 'react';
 import MenuImage from '../../components/MenuImage/MenuImage';
-import NewEventForm from '../components/NewEventForm';
-import EventList from './components/EventList';
 
 import Eventhero from '../../assets/Eventhero.jpg';
 
@@ -83,7 +81,6 @@ const EventHome = () => {
       </div>
       <div>
         <h2>Create New Event</h2>
-        <NewEventForm />
       </div>
     </div>
   );
