@@ -3,30 +3,16 @@ import Card from '../../../components/UIElements/Card';
 import Button from '../../../components/Buttons/FormButton';
 import './EventItem.css';
 import { useNavigate } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
-  },
-  item: {
-    marginBottom: '20px',
-  },
-}));
+import TextField from '@mui/material/TextField';
+import Grid2 from '@mui/material/Unstable_Grid2';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const RsvpDetails = (props) => {
   const navigate = useNavigate();
-  const classes = useStyles();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -87,9 +73,14 @@ const RsvpDetails = (props) => {
         <Typography variant="h5" component="h2">
           {props.title}
         </Typography>
-        <form className={classes.root} noValidate onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+        <form
+          style={{ margin: '10px', backgroundColor: '#eee' }}
+          noValidate
+          onSubmit={handleSubmit}
+        >
+          {/* <form className={classes.root} noValidate onSubmit={handleSubmit}> */}
+          <Grid2 container spacing={2}>
+            <Grid2 item xs={12} sm={6}>
               <TextField
                 required
                 id="firstName"
@@ -98,8 +89,8 @@ const RsvpDetails = (props) => {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Grid2>
+            <Grid2 item xs={12} sm={6}>
               <TextField
                 required
                 id="lastName"
@@ -108,8 +99,8 @@ const RsvpDetails = (props) => {
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Grid2>
+            <Grid2 item xs={12} sm={6}>
               <TextField
                 required
                 id="email"
@@ -118,8 +109,8 @@ const RsvpDetails = (props) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Grid2>
+            <Grid2 item xs={12} sm={6}>
               <TextField
                 required
                 id="phone"
@@ -128,16 +119,17 @@ const RsvpDetails = (props) => {
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
-            </Grid>
-            <Grid item xs={12}>
+            </Grid2>
+            <Grid2 item xs={12}>
               <Typography variant="h6">Items:</Typography>
               {props.items.map((item, index) => (
-                <Grid container alignItems="center" spacing={2} key={index}>
-                  <Grid item xs={8} sm={9}>
+                <Grid2 container alignItems="center" spacing={2} key={index}>
+                  <Grid2 item xs={8} sm={9}>
                     <Typography>{item.name}</Typography>
-                  </Grid>
-                  <Grid item xs={4} sm={3}>
-                    <div className={classes.quantity}>
+                  </Grid2>
+                  <Grid2 item xs={4} sm={3}>
+                    <div style={{ marginBottom: '20px' }}>
+                      {/* <div className={classes.quantity}> */}
                       <IconButton
                         aria-label="decrease quantity"
                         onClick={() => handleDecrement(index, -1)}
@@ -152,17 +144,17 @@ const RsvpDetails = (props) => {
                         <AddIcon />
                       </IconButton>
                     </div>
-                  </Grid>
-                </Grid>
+                  </Grid2>
+                </Grid2>
               ))}
-            </Grid>
-            <Grid item xs={12}>
+            </Grid2>
+            <Grid2 item xs={12}>
               <Button type="submit" variant="contained" color="primary">
                 Submit RSVP
               </Button>
               <Button to={`/events`}>CANCEL</Button>
-            </Grid>
-          </Grid>
+            </Grid2>
+          </Grid2>
         </form>
       </Box>
     </React.Fragment>
