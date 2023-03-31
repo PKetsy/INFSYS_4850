@@ -7,6 +7,7 @@ import EventHome from './pages/Events/EventHome';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 
+import AdminHome from './pages/Admin/AdminHome';
 import AdminLogin from './pages/Admin/AdminLogin';
 
 import Navbar from './components/Navbar/Navbar';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route exact path="/admin/login" component={AdminLogin} />
+          <Route exact path="/admin" element={<AdminHome />} />
         </Routes>
       </main>
       <Footer />
