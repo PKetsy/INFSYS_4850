@@ -1,28 +1,31 @@
 import React from 'react';
 import MenuImage from '../../components/MenuImage/MenuImage';
-
+import EventList from '../../../src/pages/Events/components/EventList';
 import Eventhero from '../../assets/Eventhero.jpg';
+import './EventHome.css';
 
-// const DUMMY_EVENTS = [
-//   {
-//     id: 'p1',
-//     title: 'Alaska Fishing Trip',
-//     description: 'Wild Alaska Salmon, Halibut, Herring, Pollock',
-//     imageUrl:
-//       'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/336438307_1127064121295879_9137703147887123946_n.jpg?stp=cp6_dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=B-JUtzXKFn0AX8YmZ5Y&_nc_ht=scontent-ord5-1.xx&oh=00_AfCN8UYp2Xnqgf6E1CGhhSjYy97tjBadIDhoxxEqJeIWIA&oe=64179EAA',
-//     creator: 'u1',
-//   },
+const DUMMY_EVENTS = [
+  {
+    id: 'p1',
+    title: 'Alaska Fishing Trip',
+    date: 'April 1-8, 2023',
+    description: 'Wild Alaska Salmon, Halibut, Herring, Pollock',
+    imageUrl:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/339105550_765490488219223_5463839056538753659_n.jpg?stp=cp6_dst-jpg&_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=PbbbZeY7Vf0AX-qT-a3&_nc_ht=scontent-ord5-2.xx&oh=00_AfBlE0CYZGHenRXjp6RZKSvXPexr2khPIdxa7TSqMXFY_Q&oe=642BB008',
+    creator: 'u1',
+  },
 
-//   {
-//     id: 'p2',
-//     title: 'Louisiana Crawfish',
-//     description:
-//       'Big fat crawdads ready for a cajun boil!  Sold by the sack, or by the pound!!',
-//     imageUrl:
-//       'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/334596884_1367426374033668_7133794271096531278_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=U_SJl3F2kKsAX-VT1AQ&_nc_ht=scontent-ord5-2.xx&oh=00_AfDzpUdvrzzJV25KWZkqa_jQYJcMed-T8N-kKz0EXgSy-A&oe=64170C0A',
-//     creator: 'u2',
-//   },
-// ];
+  {
+    id: 'p2',
+    title: 'Louisiana Crawfish',
+    date: 'April 5-12, 2023',
+    description:
+      'Big fat crawdads ready for a cajun boil!  Sold by the sack, or by the pound!!',
+    imageUrl:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/337989910_216942054253914_27463090514287716_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=591O-rdnIEAAX_qjtrS&_nc_ht=scontent-ord5-2.xx&oh=00_AfDiQ8wDkMdn8sMYU6jSngHUhB96jNm1De5jgBdiUzhCdA&oe=642C3806',
+    creator: 'u2',
+  },
+];
 
 const EventHome = () => {
   return (
@@ -34,7 +37,7 @@ const EventHome = () => {
       />
       <div className="container-grid-container">
         <div className="about-info-content">
-          <h2 className="heading-secondary">
+          <h2 className="heading">
             <br></br>
             <span>Quick facts</span> about our Events!
           </h2>
@@ -80,7 +83,9 @@ const EventHome = () => {
         </div>
       </div>
       <div>
-        <h2>Create New Event</h2>
+        <br></br>
+        <h2 className="heading_two">Current Events</h2>
+        <EventList items={DUMMY_EVENTS} />
       </div>
     </div>
   );

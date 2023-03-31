@@ -16,7 +16,6 @@ const About = () => {
           <span className="ampersand"> & </span>,
           ' photo gallery',
         ]}
-        text="Our Story"
       />
       <AboutInfo />
       <OurData />

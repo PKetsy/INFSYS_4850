@@ -1,14 +1,12 @@
-import React from "react";
-import "./AboutInfo.css";
+import React from 'react';
+import './AboutInfo.css';
 
 const AboutInfo = () => {
   return (
     <div className="section">
       <div className="container-grid-container">
         <div className="about-info-content">
-          <h2 className="heading-secondary">
-            A few words <span>about us!</span>
-          </h2>
+          <h2 className="heading">A Few Words About Us!</h2>
           <h4>Let us introduce ourselves</h4>
 
           <p>
@@ -27,9 +25,7 @@ const AboutInfo = () => {
         </div>
 
         <div className="about-info-content">
-          <h2 className="heading-secondary">
-            Always the <span>best quality</span>
-          </h2>
+          <h2 className="heading_two">BEST QUALITY FOR YOU - ALWAYS</h2>
           <h4>We hope to see you soon!</h4>
 
           <p>
