@@ -9,7 +9,9 @@ const Footer = () => {
           <div className="footer-grid-item">
             <h3>The Fruit Stand & Seafood</h3>
             <p>14433 Manchester Rd, Manchester, MO 63011</p>
-            <p>636-386-5050</p>
+            <p>
+              <a href="tel:+16363865050">636-386-5050</a>
+            </p>
           </div>
         </div>
       </div>

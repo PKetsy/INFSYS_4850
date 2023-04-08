@@ -22,12 +22,20 @@ const fetchNote = async (req, res) => {
 const createNote = async (req, res) => {
   // Get the sent in data off request body
   const title = req.body.title;
-  const body = req.body.body;
+  const startDate = req.body.startDate;
+  const endDate = req.body.endDate;
+  const description = req.body.description;
+  const image = req.body.image;
+  const eventItems = req.body.eventItems;
 
   // Create a 'note' with it
   const note = await Note.create({
     title: title,
-    body: body,
+    startDate: startDate,
+    endDate: endDate,
+    description: description,
+    image: image,
+    eventItems: eventItems,
   });
   // respond with the new note
   res.json({ note: note });
@@ -39,12 +47,20 @@ const updateNote = async (req, res) => {
 
   // Get data off request body
   const title = req.body.title;
-  const body = req.body.body;
+  const startDate = req.body.startDate;
+  const endDate = req.body.endDate;
+  const description = req.body.description;
+  const image = req.body.image;
+  const eventItems = req.body.eventItems;
 
   // Find and update the record
   await Note.findByIdAndUpdate(noteId, {
     title: title,
-    body: body,
+    startDate: startDate,
+    endDate: endDate,
+    description: description,
+    image: image,
+    eventItems: eventItems,
   });
 
   // Find the updated note
@@ -57,6 +73,7 @@ const updateNote = async (req, res) => {
 const deleteNote = async (req, res) => {
   // get ID off of URL
   const noteId = req.params.id;
+
   // Delete the record
   await Note.deleteOne({ id: noteId });
   // Respond

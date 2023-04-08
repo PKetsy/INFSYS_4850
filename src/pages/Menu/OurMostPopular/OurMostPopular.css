@@ -1,4 +1,16 @@
 .container-most-popular {
   text-align: center;
-  padding-bottom: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  border-bottom: 3px solid #18191a;
+}
+
+.popular-heading-secondary span {
+  color: black;
+}
+
+.menu-item h3,
+.menu-item p {
+  color: black;
 }

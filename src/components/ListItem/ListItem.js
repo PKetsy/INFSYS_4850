@@ -1,5 +1,5 @@
-import React from "react";
-import "./ListItem.css";
+import React from 'react';
+import './ListItem.css';
 
 const ListItem = ({ title, description, price, itemImage }) => {
   return (
@@ -9,7 +9,9 @@ const ListItem = ({ title, description, price, itemImage }) => {
           {itemImage && <img src={itemImage} alt="menu" />}
           <div>
             <h3>{title}</h3>
-            {description && <p>{description}</p>}
+            {description && (
+              <p className="list-items-description">{description}</p>
+            )}
           </div>
           <h3>${price}</h3>
         </li>

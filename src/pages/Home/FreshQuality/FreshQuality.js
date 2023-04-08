@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "./FreshQuality.css";
-import { BsFillStarFill } from "react-icons/bs";
+import React, { useState } from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './FreshQuality.css';
+import { BsFillStarFill } from 'react-icons/bs';
 
-import image1 from "../../../assets/FreshQuality1.png";
-import image2 from "../../../assets/FreshQuality2.jpg";
-import image3 from "../../../assets/FreshQuality3.jpg";
-import image4 from "../../../assets/FreshQuality4.jpg";
-import image5 from "../../../assets/FreshQuality5.jpg";
+import image1 from '../../../assets/FreshQuality1.png';
+import image2 from '../../../assets/FreshQuality2.jpg';
+import image3 from '../../../assets/FreshQuality3.jpg';
+import image4 from '../../../assets/FreshQuality4.jpg';
+import image5 from '../../../assets/FreshQuality5.jpg';
 
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
 const FreshQuality = () => {
   const [items, setItems] = useState([
@@ -32,9 +32,9 @@ const FreshQuality = () => {
   };
 
   return (
-    <div className="section">
-      <div className="container">
-        <div className="fresh-container">
+    <div className="fresh_section">
+      <div className="fresh_container">
+        <div className="containerr">
           <div className="fresh-carousel">
             <div>
               <Slider {...settings}>
@@ -48,13 +48,14 @@ const FreshQuality = () => {
           </div>
 
           <div className="fresh-content">
-            <h2 className="heading-secondary">
-              Amazing food <span className="ampersand">&</span>
+            <h2 className="fresh-heading-secondary">
+              Amazing food
               <br />
-              <span>
-                Great <br /> Quality
-              </span>
+              <span className="ampersand">& </span>
+              <br />
+              Great Quality
             </h2>
+            <br />
             <h4>We hope to see you soon!</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero non,
@@ -77,11 +78,30 @@ const FreshQuality = () => {
         <div className="fresh-card-container">
           <div className="fresh-card fresh-card-left">
             <img src={image1} alt="key-fish" className="fresh-card-image" />
-            <div className="fresh-card-content">
+            <div className="fresh_card_content">
+              <div className="fresh-card-title">
+                <BsFillStarFill color="#c3512f" />
+                <h3 className="heading-tertiary">Only the best quality!</h3>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Exercitationem temporibus rerum magni tempora sed quasi dolores
+                praesentium recusandae vitae saepe dicta culpa, commodi modi
+                dignissimos mollitia aut ullam a aperiam.
+              </p>
+            </div>
+          </div>
+          <div className="fresh-card fresh-card-center">
+            <img
+              src={image2}
+              alt="royal_red_shrimp"
+              className="fresh-card-image"
+            />
+            <div className="fresh_card_content">
               <div className="fresh-card-title">
                 <BsFillStarFill color="#c3512f" />
                 <h3 className="heading-tertiary">
-                  Only the best <span>quality</span>
+                  <span>Royal Red Shrimp!</span>
                 </h3>
               </div>
               <p>
@@ -98,7 +118,7 @@ const FreshQuality = () => {
               alt="royal_red_shrimp"
               className="fresh-card-image"
             />
-            <div className="fresh-card-content">
+            <div className="fresh_card_content">
               <div className="fresh-card-title">
                 <BsFillStarFill color="#c3512f" />
                 <h3 className="heading-tertiary">

@@ -1,5 +1,5 @@
-import React from "react";
-import "./OurTeam.css";
+import React from 'react';
+import './OurTeam.css';
 
 const OurTeam = () => {
   return (
@@ -7,11 +7,9 @@ const OurTeam = () => {
       <div className="team-img">
         <div className="container">
           <div className="team-content">
-            <h1 className="heading-primary">
-              Our <span>team</span>
-            </h1>
+            <h1 className="heading-primary">Our team</h1>
 
-            <p className="text-white">We are passionate about quality!</p>
+            <p>We are passionate about quality!</p>
           </div>
         </div>
       </div>
@@ -19,10 +17,10 @@ const OurTeam = () => {
       <div className="container">
         <div className="grid-container py-md">
           <div className="grid-item team-info">
-            <h3 className="heading-tertiary">
+            <h1 className="heading-tertiary">
               Keith <span>Last Name</span>
-            </h3>
-            <h4>Enter Role here</h4>
+            </h1>
+            <h4 className="heading-secondary">Enter Role here</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
               iusto et cumque cum excepturi repudiandae maxime beatae illo.
@@ -35,7 +33,7 @@ const OurTeam = () => {
             <h3 className="heading-tertiary">
               Employee2 <span>Last Name</span>
             </h3>
-            <h4>Enter Role here</h4>
+            <h4 className="heading-secondary">Enter Role here</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
               iusto et cumque cum excepturi repudiandae maxime beatae illo.
@@ -48,7 +46,7 @@ const OurTeam = () => {
             <h3 className="heading-tertiary">
               Employee3 <span>Last Name</span>
             </h3>
-            <h4>Enter Role here</h4>
+            <h4 className="heading-secondary">Enter Role here</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
               iusto et cumque cum excepturi repudiandae maxime beatae illo.
@@ -61,7 +59,7 @@ const OurTeam = () => {
             <h3 className="heading-tertiary">
               Employee4 <span>Last Name</span>
             </h3>
-            <h4>Enter Role here</h4>
+            <h4 className="heading-secondary">Enter Role here</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
               iusto et cumque cum excepturi repudiandae maxime beatae illo.

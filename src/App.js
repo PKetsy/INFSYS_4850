@@ -12,6 +12,8 @@ import AdminLogin from './pages/Admin/AdminLogin';
 
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import RequireAuth from './pages/Admin/components/RequireAuth';
+import AdminLogout from './pages/Admin/AdminLogout';
 
 function App() {
   return (
@@ -25,8 +27,17 @@ function App() {
           <Route path="/events" element={<EventHome />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route exact path="/admin/login" component={AdminLogin} />
-          <Route exact path="/admin" element={<AdminHome />} />
+          <Route exact path="/admin/login" element={<AdminLogin />} />
+          <Route exact path="/admin/logout" element={<AdminLogout />} />
+          <Route
+            exact
+            path="/admin"
+            element={
+              <RequireAuth>
+                <AdminHome />
+              </RequireAuth>
+            }
+          />
         </Routes>
       </main>
       <Footer />

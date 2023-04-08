@@ -43,8 +43,8 @@ const Gallery = () => {
   return (
     <div className="about-section">
       <div className="container">
-        <div className="fresh-container">
-          <div className="fresh-carousel">
+        <div className="about-container">
+          <div className="about-carousel">
             <div>
               <Slider {...settings}>
                 {items.map((items) => (

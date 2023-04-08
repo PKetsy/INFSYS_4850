@@ -15,6 +15,11 @@
 
 .list-items ul li h3 {
   margin-left: auto;
+  color: black;
+}
+
+.list-items-description {
+  color: black;
 }
 
 .list-items img {

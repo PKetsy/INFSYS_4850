@@ -1,4 +1,7 @@
 import React from 'react';
+
+import './Menu.css';
+
 import MenuImage from '../../components/MenuImage/MenuImage';
 import bgImage from '../../assets/MenuBg.jpg';
 import OurMostPopular from './OurMostPopular/OurMostPopular';
@@ -12,11 +15,12 @@ import Beverages from './Beverages/Beverages';
 const Menu = () => {
   return (
     <div>
-      <MenuImage
-        bgImage={bgImage}
-        heading={['The', <span> Menu</span>]}
-        text="Everything we have to offer at one glance!"
-      />
+      <MenuImage bgImage={bgImage} />
+      <div className="welcome_message">
+        <h4 className="welcome_box">THE MENU </h4>
+        <h5 className="welcome_box">Questions?</h5>
+        <span className="hero_special_word">(636)-386-5050</span>
+      </div>
       <OurMostPopular />
       <Fruits />
       <Vegetables />

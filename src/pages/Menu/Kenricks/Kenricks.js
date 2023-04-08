@@ -1,35 +1,32 @@
-import React from "react";
-import "./Kenricks.css";
+import React from 'react';
+import './Kenricks.css';
 
-import ListItem from "../../../components/ListItem/ListItem";
+import ListItem from '../../../components/ListItem/ListItem';
 
 const menuDataLeft = [
   {
-    title: "Kenricks1",
-    description: "description1",
+    title: 'Kenricks1',
+    description: 'description1',
   },
   {
-    title: "Kenricks2",
-    description: "description2",
+    title: 'Kenricks2',
+    description: 'description2',
   },
   {
-    title: "Kenricks3",
-    description: "description3",
-  },
-];
-
-const menuDataRight = [
-  {
-    title: "Kenricks4",
-    description: "description4",
+    title: 'Kenricks3',
+    description: 'description3',
   },
   {
-    title: "Kenricks5",
-    description: "description5",
+    title: 'Kenricks4',
+    description: 'description4',
   },
   {
-    title: "Kenricks6",
-    description: "description6",
+    title: 'Kenricks5',
+    description: 'description5',
+  },
+  {
+    title: 'Kenricks6',
+    description: 'description6',
   },
 ];
 
@@ -44,13 +41,11 @@ const Kenricks = () => {
         <div className="grid-container">
           <div>
             {menuDataLeft.map((data, i) => (
-              <ListItem title={data.title} description={data.description} />
-            ))}
-          </div>
-
-          <div>
-            {menuDataRight.map((data, i) => (
-              <ListItem title={data.title} description={data.description} />
+              <ListItem
+                key={i}
+                title={data.title}
+                description={data.description}
+              />
             ))}
           </div>
         </div>

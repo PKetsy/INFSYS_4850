@@ -1,0 +1,33 @@
+.create-form-container {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.create-form-title {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .description-box {
+    min-width: auto;
+  }
+}
+
+.create-form {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.itemPrice {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .description-box {
+    max-width: 250%;
+  }
+}

@@ -1,35 +1,32 @@
-import React from "react";
-import "./Seafood.css";
+import React from 'react';
+import './Seafood.css';
 
-import ListItem from "../../../components/ListItem/ListItem";
+import ListItem from '../../../components/ListItem/ListItem';
 
 const menuDataLeft = [
   {
-    title: "Seafood1",
-    description: "description1",
+    title: 'Seafood1',
+    description: 'description1',
   },
   {
-    title: "Seafood2",
-    description: "description2",
+    title: 'Seafood2',
+    description: 'description2',
   },
   {
-    title: "Seafood3",
-    description: "description3",
-  },
-];
-
-const menuDataRight = [
-  {
-    title: "Seafood4",
-    description: "description4",
+    title: 'Seafood3',
+    description: 'description3',
   },
   {
-    title: "Seafood5",
-    description: "description5",
+    title: 'Seafood4',
+    description: 'description4',
   },
   {
-    title: "Seafood6",
-    description: "description6",
+    title: 'Seafood5',
+    description: 'description5',
+  },
+  {
+    title: 'Seafood6',
+    description: 'description6',
   },
 ];
 
@@ -44,13 +41,11 @@ const Seafood = () => {
         <div className="grid-container">
           <div>
             {menuDataLeft.map((data, i) => (
-              <ListItem title={data.title} description={data.description} />
-            ))}
-          </div>
-
-          <div>
-            {menuDataRight.map((data, i) => (
-              <ListItem title={data.title} description={data.description} />
+              <ListItem
+                key={i}
+                title={data.title}
+                description={data.description}
+              />
             ))}
           </div>
         </div>

@@ -1,33 +1,33 @@
-import React from "react";
-import "./Misc.css";
+import React from 'react';
+import './Misc.css';
 
-import ListItem from "../../../components/ListItem/ListItem";
-import MiscCover from "../../../assets/MiscCover.jpg";
+import ListItem from '../../../components/ListItem/ListItem';
+import MiscCover from '../../../assets/MiscCover.jpg';
 
 const menuDataRight = [
   {
-    title: "Misc1",
-    description: "description1",
+    title: 'Misc1',
+    description: 'description1',
   },
   {
-    title: "Misc2",
-    description: "description2",
+    title: 'Misc2',
+    description: 'description2',
   },
   {
-    title: "Misc3",
-    description: "description3",
+    title: 'Misc3',
+    description: 'description3',
   },
   {
-    title: "Misc4",
-    description: "description4",
+    title: 'Misc4',
+    description: 'description4',
   },
   {
-    title: "Misc5",
-    description: "description5",
+    title: 'Misc5',
+    description: 'description5',
   },
   {
-    title: "Misc6",
-    description: "description6",
+    title: 'Misc6',
+    description: 'description6',
   },
 ];
 
@@ -35,7 +35,7 @@ const Misc = () => {
   return (
     <div className="container_misc-selection">
       <h1 className="heading-secondary">
-        <span>Misc Selection</span>
+        <span>MISCELLANEOUS SECTION</span>
       </h1>
       <div className="grid-container">
         <div>
@@ -44,7 +44,11 @@ const Misc = () => {
 
         <div>
           {menuDataRight.map((data, i) => (
-            <ListItem title={data.title} description={data.description} />
+            <ListItem
+              key={i}
+              title={data.title}
+              description={data.description}
+            />
           ))}
         </div>
       </div>
